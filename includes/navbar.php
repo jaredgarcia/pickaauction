@@ -51,7 +51,7 @@ if(isset($_SESSION['loggedIn'])){
                     <a class="nav-link" href="#"  id="nav_fullname">' . $_SESSION["userFullname"] . '</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="includes/logout.php"  id="nav_logout">Log Out</a>
+                    <a class="nav-link" href="includes/sessions/logout.php"  id="nav_logout">Log Out</a>
                 </li>
             </ul>
             </div>
