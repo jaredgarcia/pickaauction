@@ -1,5 +1,5 @@
 <?php
-include 'database/db_connection.php';
+include '../database/db_connection.php';
 
 if (isset($_POST['key'])) { 
         if (isset($_POST['key'])=='login_btn') { 

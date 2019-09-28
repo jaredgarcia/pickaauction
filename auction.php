@@ -11,120 +11,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include('includes/src/link_href.php'); ?>
 
-    <title>Picka</title>
-    <style>
-        .nav-link {
-        color: white !important;
-        }
-
-        .nav-link:hover {
-        color: #32CD32 !important;
-        }
-
-        .cr_image {
-        object-fit: cover;
-        width: 100%;
-        height: 400px;
-        -webkit-filter: grayscale(80%) brightness(70%) contrast(70%)
-        }
-        .modal-header{
-            background-color:#343a40;
-        }
-        .modal-title{
-            color:white;
-        }
-        #img-bg-index{
-            background-image:url("https://si.wsj.net/public/resources/images/B3-DM067_RIGHTS_IM_20190319162958.jpg?fbclid=IwAR1EeOgNf-BSc4hA6KgCUPj7o48qoVezwvnQXlMcRJQuzFfCDtEFT6XZ2ko");
-    
-        }
-        #forgot_pw{
-            color:#999;
-        }
-
-            .card-width {
-        width: 460px;
-        }
-
-        .card-house-padding {
-            /*background: rebeccapurple;*/
-            margin: 5px -17px 0px 0px;
-        }
-
-        .card-body-house {
-        padding: 10px;
-        }
-
-        .card-house {
-        -webkit-box-shadow: 3px 0px 16px -6px rgba(66,66,66,1);
-        -moz-box-shadow: 3px 0px 16px -6px rgba(66,66,66,1);
-        box-shadow: 3px 0px 16px -6px rgba(66,66,66,1);
-        border-radius: 10px;
-        }
-
-        .house-image {
-        width: 100%;
-        height: 100%;
-        }
-        .house-auction-button-1 {
-        background: -webkit-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 0%, rgba(145,232,66,1) 100%);
-        color: white;
-        }
-
-        .house-auction-button-2 {
-        background: -webkit-linear-gradient(left, rgba(116,117,111,1) 0%, rgba(51,51,51,1) 100%);
-        color: white;
-        }
-
-        .view-details-button {
-        border-radius: 10px;
-        border: none;
-        padding: 5px;
-        color: white;
-        font-weight: bold;
-        background: -webkit-linear-gradient(left, rgba(55,207,25,1) 0%, rgba(8,153,0,1) 100%);
-        }
-
-        .carousel-control-prev {
-        margin-left: -120px;
-        }
-        .carousel-control-next  {
-        margin-right: -60px;
-        }
-
-        .carousel-control-prev-icon {
-        background-color: black;
-        }
-
-        .carousel-control-next-icon {
-        background-color: black;
-        }
-
-        .carousel-control-prev {
-        width: 130px;
-        }
-
-        .carousel-control-prev-icon {
-        margin-right: -90px;
-        }
-
-        .carousel-control-next {
-        width: 130px;
-        }
-
-        .carousel-control-next-icon {
-        margin-left: -90px;
-        }
-
-        .card-houses-2 {
-        cursor: pointer;
-        }
-
-        .card-houses {
-        cursor: pointer;
-        }
-
-
-    </style>
+    <title>Picka</title> 
 </head>
 
 <body>
@@ -232,6 +119,10 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                 </div>
             </div>
             <div class="modal-footer">
+                <button class="btn btn-outline-primary" id="btn_paymaya" ><img width="22px;" height="22px;" src="https://lh3.googleusercontent.com/-K4C2TuW2ISbRoO88Y9IemE2ELzAKS8WCLCcr_01lhvrWTG1LqSHw4wsfpVufkW2ECG2=s180"> Paymaya</button>
+                <button class="btn btn-outline-primary" id="btn_gcash" >
+                    GCASH
+                </button>
                <button id="btn_login" class="btn btn-outline-success">
                 Login
                </button>
@@ -248,144 +139,170 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
         </div>
     </div>
 </div>
-<?php include('includes/src/script_src.php'); ?>
-    <script>
-        $( document ).ready(function() {
-            $("#nav_login").on('click', function() {
-                $("#modal_content").modal('show');
-                $(".register_content").hide();
-                $(".login_content").show();
-                $("#btn_save").hide();
-                $("#btn_login").show();
-                $("#btn_signup").show();
-                $("#btn_cancel").hide();
-                $(".modal-title").html('Welcome!');
-                document.getElementById("modal_dialog").className = "modal-dialog";
-            });
-            $("#nav_register").on('click', function() {
-                $("#modal_content").modal('show');
-                $(".login_content").hide();
-                $(".register_content").show();
-                $("#btn_login").hide();
-                $("#btn_signup").hide();
-                $("#btn_save").show();
-                $("#btn_cancel").show();
-                $(".modal-title").html('Sign Up!');
-                document.getElementById("modal_dialog").className = "modal-dialog modal-lg";
-            });
-            $("#btn_signup").on('click', function() {
-                $("#modal_content").modal('show');
-                $(".login_content").hide();
-                $(".register_content").show();
-                $("#btn_login").hide();
-                $("#btn_signup").hide();
-                $("#btn_save").show();
-                $("#btn_cancel").show();
-                $(".modal-title").html('Sign Up!');
-                document.getElementById("modal_dialog").className = "modal-dialog modal-lg";
-            });
-            
 
-            $("#btn_login").on('click', function() {
-                var email = $("#login_email").val();
-                var password = $("#login_password").val();
-               
-                $.ajax({
-                    url: 'includes/sessions/login_session.php',
-                    method: 'POST',
-                    dataType: 'text',
-                    data: {
-                        login: 1,
-                        email: email,
-                        key:'login_btn',
-                        password: password
-                    },
-                    success: function(response) {
-                        if (response.indexOf('success') >= 0) {
-                            window.location = 'index.php';
-                        }
-                        if (response.indexOf('invalid') >= 0) {
-                            $("#invalid_msg").html('Invalid Email and password!');
-                        }
-                    },
+<div class="section">
+            <div class="row">
+                <div class="col-md form-inline">
+                    <p id="section-selected">For Rent</p>
+                    <p id="section-location">
+                        <img id="location-icon" src="images/location-icon.png" alt="">La Marea Subd. Brgy. San Antnio
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                    <div class="col-md-4">
+                        <p class="section-details">2 Storey House, Calamba Laguna</p>
+                    </div>
+
+                    <div class="col-md-5 form-inline" style="background-color: #f6f6f6; padding: 0;">
+                        <div class="col-md extra-details">
+                            <img src="images/circle-icon.png" alt="" style="width: 40px; height: 40px;">
+                            <div class="section-extra-details">
+                                <p class="digits">663</p>
+                                <p>PROPERTY ID</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md extra-details">
+                            <img src="images/circle-icon.png" alt="" style="width: 40px; height: 40px;">
+                            <div class="section-extra-details">
+                                <p class="digits">200 Sqft</p>
+                                <p>SIZE</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md extra-details">
+                            <img src="images/circle-icon.png" alt="" style="width: 40px; height: 40px;">
+                            <div class="section-extra-details">
+                                <p class="digits">4</p>
+                                <p>BEDROOMS</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md extra-details">
+                            <img src="images/circle-icon.png" alt="" style="width: 40px; height: 40px;">
+                            <div class="section-extra-details">
+                                <p class="digits">3</p>
+                                <p>BATHROOMS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                            <p class="section-details" style="text-align: center;">Php 10,000/Month</p>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card display-card">
+                        <div class="card-header head-of-card">
+                            <button type="button" class="btn card-btn">Gallery</button>
+                            <button type="button" class="btn card-btn">View Tour</button>
+                            <button type="button" class="btn card-btn">Video</button>
+                            <button type="button" class="btn card-btn">Street View</button>
+                        </div>
+    
+                        <div class="card-body content-of-card">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <img src="images/sample-house-image.jpg" class="img-fluid selected-image" alt="">
+                                </div>
+                                <div class="col-md-3">
+                                    <img src="images/t1.jpg" class="img-fluid other-image" alt="">
+                                    <img src="images/t2.jpg" class="img-fluid other-image" alt="">
+                                    <img src="images/t3.jpg" class="img-fluid other-image" alt="">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="card details-card">
+                        <div class="card-header head-of-card">
+                            <button type="button" class="btn card-btn">Overview</button>
+                            <button type="button" class="btn card-btn">Desciption</button>
+                            <button type="button" class="btn card-btn">Features</button>
+                            <button type="button" class="btn card-btn">Address</button>
+                            <button type="button" class="btn card-btn">Nearby places</button>
+                        </div>
+    
+                        <div class="card-body content-of-card">
+                            <div class="row">
+                                <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Property ID<span class="detailsValue">632</span></div>
+                                <div class="col-md-4"><p class="tblfrmt newDefaultFontBold">Property Status<span class="detailsValue">For sale</span></p></div>
+                                <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Year Built ID<span class="detailsValue">2017</span></div>
+                                <div class="col-md-4"><p class="tblfrmt newDefaultFontBold">Price<span class="detailsValue">Php 10,000,000</span></div>
+                                <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Bedrooms<span class="detailsValue">4</span></p></div>
+                                <div class="col-md-4"><p class="tblfrmt newDefaultFontBold">Floor Area<span class="detailsValue">200 SqFt</span></div>
+
+                                <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Property type<span class="detailsValue">Town House</span></div>
+                                <div class="col-md-4"><p class="tblfrmt newDefaultFontBold">Bathrooms<span class="detailsValue">4</span></p></div>
+                                <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Lot Area<span class="detailsValue">400 SqFt</span></div>
+                                <div class="col-md-4"><p class="tblfrmt newDefaultFontBold"> <span class="detailsValue"> </span></div>
+                                <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold"> <span class="detailsValue"> </span></p></div>
+                                <div class="col-md-4"><p class="tblfrmt newDefaultFontBold">Garages<span class="detailsValue">2</span></div>
+                        </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card auction-scard">
+                        <div class="card-header head-of-scard">Live Auction</div>
+                        <div class="card-body content-of-scard">
+                            <p class="newDefaultFont">Auction starts in<span><button type="button" class="btn greenButton">Add to watchlist</button></span></p>
+                            <h3 class="timer">02 &nbsp; : &nbsp; 12 &nbsp; : &nbsp; 16</h2>
+                            <pre><p class="newDefaultFontSmall timerLabel">Days         Hours       Mins</p></pre>
+                            <hr>
+                            <p class="newDefaultFontSmall">Date: October 21, 2019, 12:00 AM PHT</p>
+                            <h3 class="price">Php 5,020,000</h3>
+                            <p class="center-pos newDefaultFont">Opening Bid</p>
+                            <br>
+                            <p class="newDefaultFontSmall">On-market Price: Php 10,000,000</p>
+                            <hr>
+                            <button type="button" class="btn greenButton" id="btn_reg_auction">
+                            Register Auction
+                            </button>
+                            <button type="button" class="btn greenButton">compare</button>
+                        </div>
+                    </div>
+
+                    <div class="card schedSiteVisit-scard">
+                        <div class="card-header head-of-scard">Schedule For Site Visit</div>
+                        <div class="card-body content-of-scard">
+                            <form action="" method="POST">
+                                <input class="card-textbox" type="text" name="input_name" placeholder="Name">
+                                <input class="card-textbox" type="text" name="input_email" placeholder="E-mail">
+                                <input class="card-textbox" type="text" name="input_contactNum" placeholder="Contact Number">
+                                <input class="card-textbox" type="text" name="input_targetVisitDate" placeholder="Target Visit Date">
+                                
+                                <button type="submit" class="btn greenButton sbtn"><span class="sendButton">Send</span></button>
+                            </form>
+                        </div>
+                    </div>  
+
+                    <div class="card propertyFees-scard">
+                        <div class="card-header head-of-scard">Property Fees</div>
+                        <div class="card-body content-of-scard">
+                            <p class="newDefaultFontSmall">There is no Buyer's Premium or technology
+                                fee for this propery. Seller has elected to pay the auction fees.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
                 
-                });
-       
-              
+            </div>
+        </div>
 
-            });
-        });
-
-
-        function register(key) {
-            var firstname = $("#firstname");
-            var middlename = $("#middlename");
-            var lastname = $("#lastname");
-            var birthday = $("#birthday");
-            var nationality = $("#nationality");
-            var country = $("#country");
-            var gender = $("#gender");
-            var email = $("#email");
-            var city = $("#city");
-            var password = $("#password");
-            var street = $("#street");
-            var zip_code = $("#zip_code");
-            var contact_number = $("#contact_number");
-            
-            if (isNotEmpty(lastname) && isNotEmpty(firstname) && isNotEmpty(middlename) && isNotEmpty(city) && isNotEmpty(zip_code) && isNotEmpty(street) && isNotEmpty(birthday) && isNotEmpty(country) && isNotEmpty(nationality) &&  isNotEmpty(email) && isNotEmpty(contact_number) ) {
-                $.ajax({
-                    url: 'includes/fetch/users.php',
-                    method: 'POST',
-                    dataType: 'text',
-                    data: {
-                        key: key,
-                        firstname: firstname.val(),
-                        middlename: middlename.val(),
-                        lastname: lastname.val(),
-                        birthday: birthday.val(),
-                        nationality:nationality.val(),
-                        country:country.val(),
-                        city:city.val(),
-                        street:street.val(),
-                        zip_code:zip_code.val(),
-                        gender: gender.val(),
-                        email: email.val(),
-                        password:password.val(),
-                        contact_number: contact_number.val(),
-                    },
-                    success: function(response) {
-                       if (response == "added") {
-                            alert('Successfully Register!');
-                            location.reload();
-                        } else {
-                            firstname.val('');
-                            middlename.val('');
-                            lastname.val('');
-                            birthday.val('');
-                            nationality.val('');
-                            country.val('');
-                            city.val('');
-                            street.val('');
-                            email.val('');
-                            contact_number.val('');
-                        }
-                    }
-                });
-            }
-        }
-        
-        function isNotEmpty(caller) {
-            if (caller.val() == '') {
-                caller.css('border', '1px solid red');
-                return false;
-            } else
-                caller.css('border', '');
-
-            return true;
-        }
-        
-        
-    </script>
+<?php include('includes/src/script_src.php'); ?>
+`
+   
 
 </body>
 </html>

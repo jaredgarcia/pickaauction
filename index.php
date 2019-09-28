@@ -12,123 +12,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
     <?php include('includes/src/link_href.php'); ?>
 
     <title>Picka</title>
-    <style>
-
-        .modal-header{
-                    background-color:#343a40;
-                }
-                .modal-title{
-                    color:white;
-                }
-                .nav-link {
-        color: white !important;
-        }
-
-        .nav-link:hover {
-        color: #32CD32 !important;
-        }
-
-        .cr_image {
-        object-fit: cover;
-        width: 100%;
-        height: 400px;
-        -webkit-filter: grayscale(80%) brightness(70%) contrast(70%)
-        }
-
-
-        .card-width {
-        width: 460px;
-        }
-
-        .card-house-padding {
-        /*background: rebeccapurple;*/
-        margin: 5px -17px 0px 0px;
-        }
-
-        .card-body-house {
-        padding: 10px;
-        }
-
-        .card-house {
-        -webkit-box-shadow: 3px 0px 16px -6px rgba(66,66,66,1);
-        -moz-box-shadow: 3px 0px 16px -6px rgba(66,66,66,1);
-        box-shadow: 3px 0px 16px -6px rgba(66,66,66,1);
-        border-radius: 10px;
-        }
-
-        .house-image {
-        width: 100%;
-        height: 100%;
-        }
-        .house-auction-button-1 {
-        background: -webkit-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 0%, rgba(145,232,66,1) 100%);
-        color: white;
-        }
-
-        .house-auction-button-2 {
-        background: -webkit-linear-gradient(left, rgba(116,117,111,1) 0%, rgba(51,51,51,1) 100%);
-        color: white;
-        }
-
-        .view-details-button {
-        border-radius: 10px;
-        border: none;
-        padding: 5px;
-        color: white;
-        font-weight: bold;
-        background: -webkit-linear-gradient(left, rgba(55,207,25,1) 0%, rgba(8,153,0,1) 100%);
-        }
-
-        .carousel-control-prev {
-        margin-left: -120px;
-        }
-        .carousel-control-next  {
-        margin-right: -60px;
-        }
-
-        .carousel-control-prev-icon {
-        background-color: black;
-        }
-
-        .carousel-control-next-icon {
-        background-color: black;
-        }
-
-        .carousel-control-prev {
-        width: 130px;
-        }
-
-        .carousel-control-prev-icon {
-        margin-right: -90px;
-        }
-
-        .carousel-control-next {
-        width: 130px;
-        }
-
-        .carousel-control-next-icon {
-        margin-left: -90px;
-        }
-
-        .card-houses-2 {
-        cursor: pointer;
-        }
-
-        .card-houses {
-        cursor: pointer;
-        }
-
-        .footer {
-        margin-top: 50px;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-
-        background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #383838), color-stop(100, #000000));
-        color: white;
-        text-align: center;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -1310,7 +1194,6 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
 
 
 <?php include('includes/src/script_src.php'); ?>
-    <script src="includes/src/index.js"></script>
 
 </body>
 </html>
