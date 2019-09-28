@@ -1,0 +1,38 @@
+.card-live-auction {
+  border: none;
+  color: white;
+  background: -webkit-linear-gradient(left, rgba(79,79,79,1) 0%, rgba(148,148,148,1) 100%);
+}
+
+.live-auction-assist-history {
+  background: -webkit-linear-gradient(left, rgba(79,79,79,1) 0%, rgba(148,148,148,1) 100%);
+  padding: 5px;
+}
+
+.btn-live-auction {
+  width: 80px;
+}
+
+.bidding-prices small {
+  font-size: 10px !important;
+}
+
+.card-bidding-prices {
+  border-bottom-color: #383838;
+  border: none;
+}
+.bid-now-button {
+  border-radius: 10px;
+  border: none;
+}
+
+.time-bidding {
+  border-bottom-color: #383838;
+  border: none;
+}
+
+.properties-fees-changes {
+  background: -webkit-linear-gradient(left, rgba(79,79,79,1) 0%, rgba(148,148,148,1) 100%);
+  color: white;
+  padding: 10px;
+}
