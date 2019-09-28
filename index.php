@@ -9,9 +9,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <?php include('includes/src/link_href.php'); ?>
 
     <title>Picka</title>
     <style>
@@ -753,13 +751,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
 </div>
 
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js">    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-
+<?php include('includes/src/script_src.php'); ?>
     <script>
         $( document ).ready(function() {
             $("#nav_login").on('click', function() {
@@ -802,7 +794,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                 var password = $("#login_password").val();
                
                 $.ajax({
-                    url: 'includes/login_session.php',
+                    url: 'includes/sessions/login_session.php',
                     method: 'POST',
                     dataType: 'text',
                     data: {
@@ -845,7 +837,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
             
             if (isNotEmpty(lastname) && isNotEmpty(firstname) && isNotEmpty(middlename) && isNotEmpty(city) && isNotEmpty(zip_code) && isNotEmpty(street) && isNotEmpty(birthday) && isNotEmpty(country) && isNotEmpty(nationality) &&  isNotEmpty(email) && isNotEmpty(contact_number) ) {
                 $.ajax({
-                    url: 'includes/users.php',
+                    url: 'includes/fetch/users.php',
                     method: 'POST',
                     dataType: 'text',
                     data: {
