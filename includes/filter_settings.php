@@ -24,36 +24,43 @@
         <div class="form-group">
           <select class="form-control">
             <option>Any bedrooms</option>
-            <option>Single</option>
-            <option>Double</option>
-            <option>Triple</option>
-            <option>Quad</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
           </select>
         </div>
         <div class="form-group">
           <select class="form-control">
             <option>All Bathrooms</option>
-            <option>Contemporary Style Bathroom</option>
-            <option>Eclectic Style Bathroom</option>
-            <option>Traditional Style Bathroom</option>
-            <option>Asian Style Bathroom</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
           </select>
         </div>
         <div class="form-group">
           <select class="form-control">
             <option>Any Garages</option>
-            <option>Standard Garage</option>
-                <option>Apartment Garage</option>
-                <option>Colonial Garage</option>
-                <option>Shop Garage</option>
+            <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+
           </select>
         </div>
       </div>
+
       <div class="col-md-7">
+        <select class="form-control">
+            <option>City</option>
+        </select>
+              <input type="text" class="rounded form-control mt-3" placeholder="Zip Code"/>
         <div class="col-md-9">
 
         </div>
         <br>
+
         <label for="customRange2">Price Range 1,000,000 Php</label>
         <input type="range" class="custom-range" min="0" max="5" id="customRange2">
         <br>
