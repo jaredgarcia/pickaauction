@@ -18,7 +18,6 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
 <body>
     <?php include'includes/navbar.php';?>
   	<div style="text-align: center">
-
   		<img src="https://images.marketleader.com/houseimages/NEOHREX/425/f_4126425.jpg" class="img-fluid shadow p-3 mb-5 bg-white rounded" alt="Responsive image" >
 		<h2 >Latest News</h2>
 		<div style="border-bottom-width: 12px; border-bottom-color: #4A4C49 "></div>
