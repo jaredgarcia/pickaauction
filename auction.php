@@ -1,6 +1,4 @@
 <?php
-
-
 if (session_id() == '' || !isset($_SESSION)) {session_start();}
 ?>
 <!DOCTYPE html>
@@ -17,7 +15,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
 <body>
 
 <?php include'includes/navbar.php';?>
-</div>
+
 <div id="modal_content" class="modal fade">
     <div class="modal-dialog" id="modal_dialog">
         <div class="modal-content">
@@ -25,6 +23,10 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                 <h2 class="modal-title"></h2>
             </div>
             <div class="modal-body">
+            <input type="hidden" id="userLoggedInID" value="<?php echo $_SESSION['userID']; ?>">
+             <div id="filter_settings_content">
+                                <?php include'includes/filter_settings.php'; ?>
+                            </div>
                 <div class="login_content">
                     <div class="row">
                         <div class="col-md-12">
@@ -43,6 +45,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                         </div>
                     </div>
                 </div>
+                
                 <div class="register_content">
                     <div class="row">
                         <input type="hidden" id="editRowID" value="0">
@@ -106,7 +109,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                             <input type="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email"><br>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" id="password_content">
                         <div class="col-sm-6">
                             <label>Password</label>
                             <input type="password" class="form-control" placeholder="Password" id="password"><br>
@@ -116,13 +119,27 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                             <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password"><br>
                         </div>
                     </div>
+                    <div class="row" id="pay_content"> 
+                        <div class="col-sm-6 pt-1">
+                            <h5> Php 20,000 per property cash deposit</h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <button href="live_auction.php" class="btn btn-outline-primary form-control" id="btn_paymaya" ><img width="22px;" height="22px;" src="https://lh3.googleusercontent.com/-K4C2TuW2ISbRoO88Y9IemE2ELzAKS8WCLCcr_01lhvrWTG1LqSHw4wsfpVufkW2ECG2=s180"> <a href="live_auction.php" >
+                                                                                                                                                                                                                                                                                                            Paymaya
+                                                                                                                                                                                                                                                                                                            </a></button>
+                        </div>
+                        <div class="col-sm-3">
+                        <button   class="btn btn-outline-primary form-control" id="btn_gcash" >
+                        <a href="live_auction.php" >
+                            GCASH
+                            </a>
+                        </button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-outline-primary" id="btn_paymaya" ><img width="22px;" height="22px;" src="https://lh3.googleusercontent.com/-K4C2TuW2ISbRoO88Y9IemE2ELzAKS8WCLCcr_01lhvrWTG1LqSHw4wsfpVufkW2ECG2=s180"> Paymaya</button>
-                <button class="btn btn-outline-primary" id="btn_gcash" >
-                    GCASH
-                </button>
+                
                <button id="btn_login" class="btn btn-outline-success">
                 Login
                </button>
@@ -190,36 +207,36 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                     </div>
 
                     <div class="col-md-3">
-                            <p class="section-details" style="text-align: center;">Php 10,000/Month</p>
+                            <p class="section-details" style="text-align: center;"></p>
                     </div>
             </div>
         </div>
 
         <div class="section">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="card display-card">
-                        <div class="card-header head-of-card">
-                            <button type="button" class="btn card-btn">Gallery</button>
-                            <button type="button" class="btn card-btn">View Tour</button>
-                            <button type="button" class="btn card-btn">Video</button>
-                            <button type="button" class="btn card-btn">Street View</button>
-                        </div>
-    
-                        <div class="card-body content-of-card">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <img src="images/sample-house-image.jpg" class="img-fluid selected-image" alt="">
+                <div class="row">
+                       <div class="col-md-8">
+                              <div class="card display-card">
+                                <div class="card-header head-of-card">
+                                    <button type="button" class="btn card-btn">Gallery</button>
+                                    <button type="button" class="btn card-btn">View Tour</button>
+                                    <button type="button" class="btn card-btn">Video</button>
+                                    <button type="button" class="btn card-btn" style="width: 200px;">Street View</button>
                                 </div>
-                                <div class="col-md-3">
-                                    <img src="images/t1.jpg" class="img-fluid other-image" alt="">
-                                    <img src="images/t2.jpg" class="img-fluid other-image" alt="">
-                                    <img src="images/t3.jpg" class="img-fluid other-image" alt="">
+
+                                <div class="card-body content-of-card">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <img src="images/sample-house-image.jpg" class="img-fluid selected-image" alt="">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="images/t1.jpg" class="img-fluid other-image" alt="">
+                                            <img src="images/t2.jpg" class="img-fluid other-image" alt="">
+                                            <img src="images/t3.jpg" class="img-fluid other-image" alt="">
+                                        </div>
+                                    </div>
+
                                 </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+                          </div>
 
                     <div class="card details-card">
                         <div class="card-header head-of-card">
@@ -227,18 +244,17 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                             <button type="button" class="btn card-btn">Desciption</button>
                             <button type="button" class="btn card-btn">Features</button>
                             <button type="button" class="btn card-btn">Address</button>
-                            <button type="button" class="btn card-btn">Nearby places</button>
+                            <button type="button" class="btn card-btn" style="padding:5px;">Nearby places</button>
                         </div>
     
                         <div class="card-body content-of-card">
                             <div class="row">
-                                <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Property ID<span class="detailsValue">632</span></div>
+                                <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Property ID<span class="detailsValue">663</span></div>
                                 <div class="col-md-4"><p class="tblfrmt newDefaultFontBold">Property Status<span class="detailsValue">For sale</span></p></div>
                                 <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Year Built ID<span class="detailsValue">2017</span></div>
                                 <div class="col-md-4"><p class="tblfrmt newDefaultFontBold">Price<span class="detailsValue">Php 10,000,000</span></div>
                                 <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Bedrooms<span class="detailsValue">4</span></p></div>
                                 <div class="col-md-4"><p class="tblfrmt newDefaultFontBold">Floor Area<span class="detailsValue">200 SqFt</span></div>
-
                                 <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Property type<span class="detailsValue">Town House</span></div>
                                 <div class="col-md-4"><p class="tblfrmt newDefaultFontBold">Bathrooms<span class="detailsValue">4</span></p></div>
                                 <div class="col-md-4 lightGray-bg"><p class="tblfrmt newDefaultFontBold">Lot Area<span class="detailsValue">400 SqFt</span></div>
@@ -265,9 +281,17 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                             <br>
                             <p class="newDefaultFontSmall">On-market Price: Php 10,000,000</p>
                             <hr>
-                            <button type="button" class="btn greenButton" id="btn_reg_auction">
+                            <?php
+                            if(isset($_SESSION['loggedIn'])){
+                            echo' <button class="btn greenButton" id="btn_reg_auction">
                             Register Auction
-                            </button>
+                            </button>';
+                            } else {
+                                echo'<button class="btn greenButton" id="login_auction">
+                            Register Auction
+                            </button>';
+                            }
+                            ?>
                             <button type="button" class="btn greenButton">compare</button>
                         </div>
                     </div>
@@ -300,8 +324,9 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
             </div>
         </div>
 
+
 <?php include('includes/src/script_src.php'); ?>
-`
+
    
 
 </body>

@@ -4,7 +4,6 @@ if (isset($_POST['key'])) {
 
 
 
-    
 	$firstname = $conn->real_escape_string($_POST['firstname']);
 	$middlename = $conn->real_escape_string($_POST['middlename']);
 	$lastname = $conn->real_escape_string($_POST['lastname']);
@@ -24,6 +23,13 @@ if (isset($_POST['key'])) {
 		$conn->query("INSERT INTO users (id,firstname, middlename, lastname,gender,birthday,school,email,password,city,street,country,nationality,zip_code,contact_number) VALUES ('','$firstname', '$middlename', '$lastname','$gender','$birthday','$school','$email','$password','$city','$street','$country','$nationality','$zip_code','$contact_number')");
 		exit('added');
 	}
+	$userID = $conn->real_escape_string($_POST['userID']);
+    	if ($_POST['key'] == 'getUser') {
+    		$sql = $conn->query("SELECT * FROM users WHERE id='$userID'");
+    		$data = $sql->fetch_array();
+    		exit(json_encode($data));
+
+    	}
 }
 
 

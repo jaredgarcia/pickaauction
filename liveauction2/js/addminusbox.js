@@ -1,4 +1,3 @@
-
 $('.btn-number').click(function(e){
     e.preventDefault();
     
@@ -10,7 +9,7 @@ $('.btn-number').click(function(e){
         if(type == 'minus') {
             
             if(currentVal > input.attr('min')) {
-                input.val(currentVal - 1).change();
+                input.val(currentVal - 10000).change();
             } 
             if(parseInt(input.val()) == input.attr('min')) {
                 $(this).attr('disabled', true);
@@ -18,13 +17,14 @@ $('.btn-number').click(function(e){
 
         } else if(type == 'plus') {
 
-            if(currentVal < input.attr('max')) {
-                input.val(currentVal + 1).change();
-            }
+            //if(currentVal < input.attr('max')) {
+                input.val(currentVal + 10000).change();
+            //}
+            /*
             if(parseInt(input.val()) == input.attr('max')) {
                 $(this).attr('disabled', true);
             }
-
+            */
         }
     } else {
         input.val(0);
@@ -45,13 +45,13 @@ $('.input-number').change(function() {
     } else {
         alert('Sorry, the minimum value was reached');
         $(this).val($(this).data('oldValue'));
-    }
+    }/*
     if(valueCurrent <= maxValue) {
         $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
     } else {
         alert('Sorry, the maximum value was reached');
         $(this).val($(this).data('oldValue'));
-    }
+    }*/
     
     
 });
@@ -70,6 +70,3 @@ $(".input-number").keydown(function (e) {
             e.preventDefault();
         }
     });
-
-    //reference//
-    //https://www.codeply.com/go/2VmBU7TanF/bootstrap-plus-minus-counter-input
