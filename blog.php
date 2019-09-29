@@ -17,6 +17,135 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
 
 <body>
     <?php include'includes/navbar.php';?>
+    <div id="modal_content" class="modal fade">
+        <div class="modal-dialog" id="modal_dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title"></h2>
+                </div>
+                <div class="modal-body">
+                    <div id="filter_settings_content">
+                        <?php include'includes/filter_settings.php'; ?>
+                    </div>
+                    <div class="login_content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p id="invalid_msg" style="color:red;text-align:center;"></p> <!-- Validation Message -->
+                            </div>
+                            <div class="pt-sm-1 col-md-12">
+                                <label>Email</label>
+                                <input type="text" class="form-control" placeholder="Email" id="login_email" required="required"/>
+                            </div>
+                            <div class="pt-sm-1 col-md-12">
+                                <label>Password</label>
+                                <input type="password" class="form-control" id="login_password"  placeholder="Password" required="required"/>
+                            </div>
+                            <div class="pt-sm-2 col-md-12 text-center" >
+                                <a href="#" id="forgot_pw">forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="register_content">
+                        <div class="row">
+                            <input type="hidden" id="editRowID" value="0">
+                            <div class="col-sm-3">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control"  id="lastname"><br>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>First Name</label>
+                                <input type="text" class="form-control"  id="firstname"><br>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Middle Name</label>
+                                <input type="text" class="form-control"  id="middlename"><br>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Gender</label>
+                                <select class="form-control" name="" id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                              <div class="col-sm-12">
+                                <label>School</label>
+                                <input type="text" class="form-control"  id="school"><br>
+                              </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label>Contact Number</label>
+                                <input type="number" class="form-control"  id="contact_number"><br>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Birthday</label>
+                                <input type="text" class="form-control" id ="birthday" />
+                            </div>
+
+                            <div class="col-sm-3">
+                                <label>Nationality</label>
+                                <input type="text" class="form-control" id="nationality"><br>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Country</label>
+                                <input type="text" class="form-control"  id="country"><br>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label>Address</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" placeholder="City / State Address" id="city"><br>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="Street / Blk / Lot" id="street"><br>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" placeholder="Zip Code" id="zip_code"><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="youremail@" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email"><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Password</label>
+                                <input type="password" class="form-control"  id="password"><br>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-control"  id="confirm_password"><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                   <button id="btn_login" class="btn btn-outline-success">
+                    Login
+                   </button>
+                   <button id="btn_save"  onclick="register('save')" class="btn btn-outline-success ">
+                    Save
+                    </button>
+                    <button id="btn_cancel"  data-dismiss="modal" class="btn btn-outline-success ">
+                    Cancel
+                    </button>
+                    <button id="btn_signup" class="btn btn-outline-success">
+                    Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
   	<div style="text-align: center">
   		<img src="https://images.marketleader.com/houseimages/NEOHREX/425/f_4126425.jpg" class="img-fluid shadow p-3 mb-5 bg-white rounded" alt="Responsive image" >
 		<h2 >Latest News</h2>

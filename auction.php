@@ -15,7 +15,6 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
 <body>
 
 <?php include'includes/navbar.php';?>
-
 <div id="modal_content" class="modal fade">
     <div class="modal-dialog" id="modal_dialog">
         <div class="modal-content">
@@ -23,10 +22,9 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                 <h2 class="modal-title"></h2>
             </div>
             <div class="modal-body">
-            <input type="hidden" id="userLoggedInID" value="<?php echo $_SESSION['userID']; ?>">
-             <div id="filter_settings_content">
-                                <?php include'includes/filter_settings.php'; ?>
-                            </div>
+                <div id="filter_settings_content">
+                    <?php include'includes/filter_settings.php'; ?>
+                </div>
                 <div class="login_content">
                     <div class="row">
                         <div class="col-md-12">
@@ -45,21 +43,20 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                         </div>
                     </div>
                 </div>
-                
                 <div class="register_content">
                     <div class="row">
                         <input type="hidden" id="editRowID" value="0">
                         <div class="col-sm-3">
                             <label>Last Name</label>
-                            <input type="text" class="form-control" placeholder="Last Name" id="lastname"><br>
+                            <input type="text" class="form-control"  id="lastname"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>First Name</label>
-                            <input type="text" class="form-control" placeholder="First Name" id="firstname"><br>
+                            <input type="text" class="form-control"  id="firstname"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>Middle Name</label>
-                            <input type="text" class="form-control" placeholder="Middle Name" id="middlename"><br>
+                            <input type="text" class="form-control"  id="middlename"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>Gender</label>
@@ -70,23 +67,31 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                         </div>
                     </div>
                     <div class="row">
+                          <div class="col-sm-12">
+                            <label>School</label>
+                            <input type="text" class="form-control"  id="school"><br>
+                          </div>
+                        </div>
+                    <div class="row">
                         <div class="col-sm-3">
                             <label>Contact Number</label>
-                            <input type="number" class="form-control" placeholder="Contact Number" id="contact_number"><br>
+                            <input type="number" class="form-control"  id="contact_number"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>Birthday</label>
-                            <i class="fa fa-calendar"></i><input type="text" class="form-control" id ="birthday" placeholder="Birthday" />
+                            <input type="text" class="form-control" id ="birthday" />
                         </div>
+
                         <div class="col-sm-3">
                             <label>Nationality</label>
-                            <input type="text" class="form-control" placeholder="Nationality" id="nationality"><br>
+                            <input type="text" class="form-control" id="nationality"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>Country</label>
-                            <input type="text" class="form-control" placeholder="Country" id="country"><br>
+                            <input type="text" class="form-control"  id="country"><br>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-sm-12">
                             <label>Address</label>
@@ -100,65 +105,40 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                             <input type="text" class="form-control" placeholder="Street / Blk / Lot" id="street"><br>
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control" placeholder="Zip Code" id="zip_code"><br> 
+                            <input type="text" class="form-control" placeholder="Zip Code" id="zip_code"><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <label>Email</label>
-                            <input type="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email"><br>
+                            <input type="email" class="form-control" placeholder="youremail@" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email"><br>
                         </div>
                     </div>
-                    <div class="row" id="password_content">
+                    <div class="row">
                         <div class="col-sm-6">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password" id="password"><br>
+                            <input type="password" class="form-control"  id="password"><br>
                         </div>
                         <div class="col-sm-6">
                             <label>Confirm Password</label>
-                            <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password"><br>
-                        </div>
-                    </div>
-                    <div class="row" id="pay_content"> 
-                        <div class="col-sm-6 pt-1">
-                            <h5> Php 20,000 per property cash deposit</h5>
-                        </div>
-                        <div class="col-sm-3">
-                            <button href="live_auction.php" class="btn btn-outline-primary form-control" id="btn_paymaya" ><img width="22px;" height="22px;" src="https://lh3.googleusercontent.com/-K4C2TuW2ISbRoO88Y9IemE2ELzAKS8WCLCcr_01lhvrWTG1LqSHw4wsfpVufkW2ECG2=s180"> <a href="live_auction.php" >
-                                                                                                                                                                                                                                                                                              Paymaya
-                                                                                                                                                                                                                                                                                                            </a></button>
-                        </div>
-                        <div class="col-sm-3">
-                        <button   class="btn btn-outline-primary form-control" id="btn_gcash" >
-                        <a href="live_auction.php" >
-                            GCASH
-                            </a>
-                        </button>
-                        </div>
-                    </div>
-                    <div class="row form-group row mt-2">
-                        <div class="col-md-12">
-                             <label class="form-check-label float-right">
-                                <input type="checkbox" class="form-check-input" value="">I accept the terms and agreement.
-                              </label>
+                            <input type="password" class="form-control"  id="confirm_password"><br>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                
                <button id="btn_login" class="btn btn-outline-success">
                 Login
                </button>
                <button id="btn_save"  onclick="register('save')" class="btn btn-outline-success ">
                 Save
-                </button> 
+                </button>
                 <button id="btn_cancel"  data-dismiss="modal" class="btn btn-outline-success ">
                 Cancel
-                </button> 
+                </button>
                 <button id="btn_signup" class="btn btn-outline-success">
                 Sign Up
-                </button> 
+                </button>
             </div>
         </div>
     </div>

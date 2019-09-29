@@ -26,9 +26,9 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                 <h2 class="modal-title"></h2>
             </div>
             <div class="modal-body">
-             <div id="filter_settings_content">
-                                <?php include'includes/filter_settings.php'; ?>
-                            </div>
+                <div id="filter_settings_content">
+                    <?php include'includes/filter_settings.php'; ?>
+                </div>
                 <div class="login_content">
                     <div class="row">
                         <div class="col-md-12">
@@ -52,15 +52,15 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                         <input type="hidden" id="editRowID" value="0">
                         <div class="col-sm-3">
                             <label>Last Name</label>
-                            <input type="text" class="form-control" placeholder="Last Name" id="lastname"><br>
+                            <input type="text" class="form-control"  id="lastname"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>First Name</label>
-                            <input type="text" class="form-control" placeholder="First Name" id="firstname"><br>
+                            <input type="text" class="form-control"  id="firstname"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>Middle Name</label>
-                            <input type="text" class="form-control" placeholder="Middle Name" id="middlename"><br>
+                            <input type="text" class="form-control"  id="middlename"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>Gender</label>
@@ -73,26 +73,26 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                     <div class="row">
                           <div class="col-sm-12">
                             <label>School</label>
-                            <input type="text" class="form-control" placeholder="Name of school" id="school"><br>
+                            <input type="text" class="form-control"  id="school"><br>
                           </div>
                         </div>
                     <div class="row">
                         <div class="col-sm-3">
                             <label>Contact Number</label>
-                            <input type="number" class="form-control" placeholder="Contact Number" id="contact_number"><br>
+                            <input type="number" class="form-control"  id="contact_number"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>Birthday</label>
-                            <i class="fa fa-calendar"></i><input type="text" class="form-control" id ="birthday" placeholder="Birthday" />
+                            <input type="text" class="form-control" id ="birthday" />
                         </div>
 
                         <div class="col-sm-3">
                             <label>Nationality</label>
-                            <input type="text" class="form-control" placeholder="Nationality" id="nationality"><br>
+                            <input type="text" class="form-control" id="nationality"><br>
                         </div>
                         <div class="col-sm-3">
                             <label>Country</label>
-                            <input type="text" class="form-control" placeholder="Country" id="country"><br>
+                            <input type="text" class="form-control"  id="country"><br>
                         </div>
                     </div>
 
@@ -115,17 +115,17 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                     <div class="row">
                         <div class="col-sm-12">
                             <label>Email</label>
-                            <input type="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email"><br>
+                            <input type="email" class="form-control" placeholder="youremail@" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email"><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password" id="password"><br>
+                            <input type="password" class="form-control"  id="password"><br>
                         </div>
                         <div class="col-sm-6">
                             <label>Confirm Password</label>
-                            <input type="password" class="form-control" placeholder="Confirm Password" id="confirm_password"><br>
+                            <input type="password" class="form-control"  id="confirm_password"><br>
                         </div>
                     </div>
                 </div>
@@ -210,7 +210,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                                 </div>
                                 <div class="card-footer form-row" style="padding: 0; background: none; ">
                                     <div class="btn-group col-md-12">
-                                        <button type="button" class="btn house-auction-button-1">For For Sale</button>
+                                        <button type="button" class="btn house-auction-button-1"> For Sale</button>
                                         <button type="button" class="btn house-auction-button-2">Starting Bid: Php
                                             2,000,223
                                         </button>
