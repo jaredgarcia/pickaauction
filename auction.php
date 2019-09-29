@@ -125,7 +125,7 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                         </div>
                         <div class="col-sm-3">
                             <button href="live_auction.php" class="btn btn-outline-primary form-control" id="btn_paymaya" ><img width="22px;" height="22px;" src="https://lh3.googleusercontent.com/-K4C2TuW2ISbRoO88Y9IemE2ELzAKS8WCLCcr_01lhvrWTG1LqSHw4wsfpVufkW2ECG2=s180"> <a href="live_auction.php" >
-                                                                                                                                                                                                                                                                                                            Paymaya
+                                                                                                                                                                                                                                                                                              Paymaya
                                                                                                                                                                                                                                                                                                             </a></button>
                         </div>
                         <div class="col-sm-3">
@@ -134,6 +134,13 @@ if (session_id() == '' || !isset($_SESSION)) {session_start();}
                             GCASH
                             </a>
                         </button>
+                        </div>
+                    </div>
+                    <div class="row form-group row mt-2">
+                        <div class="col-md-12">
+                             <label class="form-check-label float-right">
+                                <input type="checkbox" class="form-check-input" value="">I accept the terms and agreement.
+                              </label>
                         </div>
                     </div>
                 </div>
