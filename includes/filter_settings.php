@@ -14,25 +14,38 @@
         <div class="form-group">
           <select class="form-control">
             <option>All Property Types</option>
-
+            <option>Condominium</option>
+            <option>House & Lot</option>
+            <option>Town House</option>
+            <option>Commercial Land</option>
+            <option>Agricultural Land</option>
           </select>
         </div>
         <div class="form-group">
           <select class="form-control">
             <option>Any bedrooms</option>
-
+            <option>Single</option>
+            <option>Double</option>
+            <option>Triple</option>
+            <option>Quad</option>
           </select>
         </div>
         <div class="form-group">
           <select class="form-control">
             <option>All Bathrooms</option>
-
+            <option>Contemporary Style Bathroom</option>
+            <option>Eclectic Style Bathroom</option>
+            <option>Traditional Style Bathroom</option>
+            <option>Asian Style Bathroom</option>
           </select>
         </div>
         <div class="form-group">
           <select class="form-control">
             <option>Any Garages</option>
-
+            <option>Standard Garage</option>
+                <option>Apartment Garage</option>
+                <option>Colonial Garage</option>
+                <option>Shop Garage</option>
           </select>
         </div>
       </div>
