@@ -45,7 +45,7 @@ if(isset($_SESSION['loggedIn'])){
             <div class="navbar-collapse collapse w-100 d-flex justify-content-end">
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                <a class="nav-link" href="#">Auction Calendar</a>
+                <a class="nav-link" href="home_auction.php">Auction Calendar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"  id="nav_fullname">' . $_SESSION["userFullname"] . '</a>
@@ -104,7 +104,7 @@ if(isset($_SESSION['loggedIn'])){
     <div class="navbar-collapse collapse w-100 d-flex justify-content-end">
       <ul class="navbar-nav ">
         <li class="nav-item">
-          <a class="nav-link" href="HomeAuction.php">Auction Calendar</a>
+          <a class="nav-link" href="home_auction.php">Auction Calendar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"  id="nav_login" href="#">Login</a>
